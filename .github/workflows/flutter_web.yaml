@@ -26,8 +26,10 @@ jobs:
         run: flutter config --enable-web
       - name: 'Build Web App'
         run: flutter build web
+      - run: ls -la
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.token }}
           publish_dir: ./build/web
+      - run: ls -la
